@@ -1612,4 +1612,101 @@ section,
 #brunch a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
+.service-item iframe {
+  width: 100%;
+  max-width: 600px; /* para que no sea demasiado ancho en escritorio */
+  height: 300px; /* puedes ajustar la altura a un valor más cómodo para celular */
+  border: 0;
+}
 
+@media (max-width: 768px) {
+  #hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .simple-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: black;
+    z-index: 1;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .carousel-slide.show {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .vhs-overlay-video,
+  #flash-overlay {
+    display: none !important;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 3;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+    .evento-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .evento-separador {
+    display: none;
+  }
+
+    #countdown {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .service-item iframe {
+    height: 250px;
+  }
+}
